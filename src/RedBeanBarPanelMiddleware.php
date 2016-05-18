@@ -18,14 +18,17 @@ class RedBeanBarPanelMiddleware
     */
     public function __invoke($request, $response, $next)
     {
+        $response = $next($request, $response);
+
+        // Default values
         $keep_cache = false;
         $icon = null;
         $title = null;
         $styles = null;
 
+        // Extract config
         extract($this->config);
 
-        $response = $next($request, $response);
         $panel = new RedBeanBarPanel($this->rb->getLogger(), $keep_cache, $icon, $title, $styles);
         $this->bar->addPanel($panel);
 
