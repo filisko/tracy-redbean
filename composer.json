@@ -1,0 +1,19 @@
+{
+    "name": "filisko/tracy-redbean",
+    "description": "RedBeanPHP queries logger panel for Tracy",
+    "keywords": ["redbean", "tracy", "logger", "panel"],
+    "type": "package",
+    "require": {
+        "gabordemooij/redbean": "dev-master"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {"Filisko\\Tracy\\": "src/"}
+    },
+    "authors": [
+        {
+            "name": "Filisko",
+            "email": "filisfutsarov@gmail.com"
+        }
+    ]
+}
