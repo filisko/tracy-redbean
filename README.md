@@ -24,9 +24,8 @@ R::debug(TRUE, 3);
 
 #### Basic example
 
-I would recommend you to have a look to RedBean's official website [debugging page](http://www.redbeanphp.com/index.php?p=/debugging).
 ##### Parameters:
-1. **$logger**: Instance of your RedBean logger, you will probably put something very similar to what is in the example
+1. **$logger**: Instance of your RedBean logger, you will probably put something very similar to what is in the example.
 2. **$keep_cache** (default: false): Show or not "-- keep-cache" of RedBean's queries.
 3. **$icon**: Custom base64 encoded 16x16 image for the panel.
 4. **$title**: Custom title.
@@ -53,4 +52,6 @@ $config = [
 ];
 $app->add(new \Filisko\Tracy\RedBeanBarPanelMiddleware($tracy_bar, $db, $config));
 ```
+
+You can have a look to RedBean's website [debugging page](http://www.redbeanphp.com/index.php?p=/debugging) to understand a little bit better the examples.
 
