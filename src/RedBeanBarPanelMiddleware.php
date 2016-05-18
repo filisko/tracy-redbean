@@ -5,6 +5,7 @@ class RedBeanBarPanelMiddleware
 {
     private $bar;
     private $rb;
+    private $config;
 
     /**
     * Middleware invokable class
@@ -17,16 +18,24 @@ class RedBeanBarPanelMiddleware
     */
     public function __invoke($request, $response, $next)
     {
+        $keep_cache = false;
+        $icon = null;
+        $title = null;
+        $styles = null;
+
+        extract($this->config);
+
         $response = $next($request, $response);
-        $panel = new RedBeanBarPanel($this->rb->getLogger());
+        $panel = new RedBeanBarPanel($this->rb->getLogger(), $keep_cache, $icon, $title, $styles);
         $this->bar->addPanel($panel);
 
     	return $response;
     }
 
-    public function __construct(\Tracy\Bar $bar, \RedBeanPHP\Driver\RPDO $rb)
+    public function __construct(\Tracy\Bar $bar, \RedBeanPHP\Driver\RPDO $rb, $config = [])
     {
         $this->bar = $bar;
         $this->rb = $rb;
+        $this->config = $config;
     }
 }
