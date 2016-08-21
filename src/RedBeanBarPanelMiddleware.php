@@ -24,12 +24,11 @@ class RedBeanBarPanelMiddleware
         $keep_cache = false;
         $icon = null;
         $title = null;
-        $styles = null;
 
         // Extract config
         extract($this->config);
 
-        $panel = new RedBeanBarPanel($this->rb->getLogger(), $keep_cache, $icon, $title, $styles);
+        $panel = new RedBeanBarPanel($this->rb->getLogger(), $keep_cache, $icon, $title);
         $this->bar->addPanel($panel);
 
     	return $response;

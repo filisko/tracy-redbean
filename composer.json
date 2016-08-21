@@ -4,7 +4,8 @@
     "keywords": ["redbean", "tracy", "logger", "panel"],
     "type": "package",
     "require": {
-        "gabordemooij/redbean": "dev-master"
+        "gabordemooij/redbean": "dev-master",
+        "jdorn/sql-formatter": "^1.2"
     },
     "license": "MIT",
     "autoload": {
