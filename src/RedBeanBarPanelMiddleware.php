@@ -1,11 +1,16 @@
 <?php
 namespace Filisko\Tracy;
 
+use \Psr\Http\Message\ResponseInterface as Response;
+use \Psr\Http\Message\ServerRequestInterface as Request;
+
 class RedBeanBarPanelMiddleware
 {
-    private $bar;
-    private $rb;
-    private $config;
+    /**
+     * RedBeanBarPanel instance
+     * @var RedBeanBarPanel
+     */
+    protected $panel;
 
     /**
     * Middleware invokable class
@@ -16,28 +21,21 @@ class RedBeanBarPanelMiddleware
     *
     * @return \Psr\Http\Message\ResponseInterface
     */
-    public function __invoke($request, $response, $next)
+    public function __invoke(Request $request, Response $response, $next)
     {
         $response = $next($request, $response);
 
-        // Default values
-        $keep_cache = false;
-        $icon = null;
-        $title = null;
-
-        // Extract config
-        extract($this->config);
-
-        $panel = new RedBeanBarPanel($this->rb->getLogger(), $keep_cache, $icon, $title);
-        $this->bar->addPanel($panel);
+        RedBeanBarPanel::boot($this->panel);
 
     	return $response;
     }
 
-    public function __construct(\Tracy\Bar $bar, \RedBeanPHP\Driver\RPDO $rb, $config = [])
+    /**
+     * Set the panel
+     * @param RedBeanBarPanel $panel
+     */
+    public function __construct(RedBeanBarPanel $panel)
     {
-        $this->bar = $bar;
-        $this->rb = $rb;
-        $this->config = $config;
+        $this->panel = $panel;
     }
 }
