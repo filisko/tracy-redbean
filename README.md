@@ -1,6 +1,9 @@
 # RedBean queries logger for Tracy
 With this you will be able to see your logged queries with RedBean, this little package also provides a PSR-7 middleware if you're using frameworks like Slim, Silex, or whatever.
 
+## Result
+![RedBeanPHP queries logger for Tracy](https://i.snag.gy/T5Ok1R.jpg "RedBeanPHP queries logger for Tracy")
+
 ## Install
 To install it you can use Composer:
 
