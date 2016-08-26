@@ -29,7 +29,6 @@ R::debug(TRUE, 3);
 2. **$keep_cache** (default: false): Show or not "-- keep-cache" of RedBean's queries.
 3. **$icon**: Custom base64 encoded 16x16 image for the panel.
 4. **$title**: Custom title.
-5. **$styles**: Custom CSS styles for SQL queries text.
 
 
 ```php
