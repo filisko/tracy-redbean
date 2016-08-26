@@ -59,11 +59,9 @@ $app->add(new \Filisko\Tracy\RedBeanBarPanelMiddleware($panel));
 ```
 * If you would like to change the little icon of the panel or the title, use the provided static variables:
 ```php
-\Filisko\Tracy\RedBeanBarPanel::$icon = 'src/path/icon.png'; // That's all!
+\Filisko\Tracy\RedBeanBarPanel::$icon = 'src/path/icon.png';
 \Filisko\Tracy\RedBeanBarPanel::$title = 'RedBean query logger';
 ```
-
-
 
 You can have a look to RedBean's website [debugging page](http://www.redbeanphp.com/index.php?p=/debugging) to understand a little bit better the examples.
 
