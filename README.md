@@ -4,6 +4,8 @@
 ![RedBeanPHP queries logger for Tracy](https://i.snag.gy/T5Ok1R.jpg "RedBeanPHP queries logger for Tracy")
 
 ## Installation and configuration
+Install it via composer:
+
 `composer require filisko/tracy-redbean`
 
 To make this work you must enable RedBean's debug mode to log your queries. You can simply use RedBean's Facade debug() method.
