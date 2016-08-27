@@ -54,11 +54,11 @@ $app->add(new \Filisko\Tracy\RedBeanBarPanelMiddleware($panel));
 ```
 
 ### Extras
-* If you realized that RedBean puts at the end of your SQL queries something like '--keep-cache' for internal caching purposes and you want to hide this part from the logger, you could simply use a static flag to disable it:
+If you realized that RedBean puts at the end of your SQL queries something like '--keep-cache' for internal caching purposes and you want to hide this part from the logger, you could simply use a static flag to disable it:
 ```php
 \Filisko\Tracy\RedBeanBarPanel::$showKeepCache = false; // That's all!
 ```
-* If you would like to change the little icon of the panel or the title, use the provided static variables:
+If you would like to change the little icon of the panel or the title, use the provided static variables:
 ```php
 \Filisko\Tracy\RedBeanBarPanel::$icon = 'src/path/icon.png';
 \Filisko\Tracy\RedBeanBarPanel::$title = 'RedBean query logger';
